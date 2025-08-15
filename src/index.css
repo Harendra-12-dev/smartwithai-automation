@@ -2,41 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Premium Smart With AI Design System - All colors MUST be HSL */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Premium color palette inspired by AI and technology */
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 224 71% 6%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 224 71% 6%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* AI Blue gradient system */
+    --primary: 217 91% 59%;
+    --primary-foreground: 222 84% 4.9%;
+    --primary-gradient: linear-gradient(135deg, hsl(217 91% 59%), hsl(195 100% 50%));
+    
+    --secondary: 195 100% 50%;
+    --secondary-foreground: 222 84% 4.9%;
+    --secondary-gradient: linear-gradient(135deg, hsl(195 100% 50%), hsl(160 100% 45%));
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --accent: 160 100% 45%;
+    --accent-foreground: 222 84% 4.9%;
+    
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 62% 30%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 217 91% 59%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Premium gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 59%) 0%, hsl(195 100% 50%) 50%, hsl(160 100% 45%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(224 71% 6%) 0%, hsl(217 32% 17%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(222 84% 4.9%) 0%, hsl(224 71% 6%) 100%);
+    
+    /* Premium shadows with glow effects */
+    --shadow-premium: 0 25px 50px -12px hsl(217 91% 59% / 0.25);
+    --shadow-glow: 0 0 50px hsl(217 91% 59% / 0.3);
+    --shadow-card: 0 10px 30px -5px hsl(222 84% 4.9% / 0.3);
+    
+    /* Animation variables */
+    --transition-premium: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +118,101 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+    background: var(--gradient-surface);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  /* Premium button variants */
+  .btn-hero {
+    @apply relative px-8 py-4 rounded-2xl font-semibold text-lg;
+    background: var(--gradient-hero);
+    box-shadow: var(--shadow-premium);
+    transition: var(--transition-premium);
+    transform: translateY(0);
+  }
+  
+  .btn-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .btn-secondary {
+    @apply relative px-8 py-4 rounded-2xl font-semibold text-lg border-2;
+    background: transparent;
+    border: 2px solid hsl(var(--primary));
+    color: hsl(var(--primary));
+    transition: var(--transition-premium);
+  }
+  
+  .btn-secondary:hover {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    transform: translateY(-2px);
+  }
+
+  /* Premium card styles */
+  .card-premium {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    border: 1px solid hsl(var(--border));
+    transition: var(--transition-premium);
+  }
+  
+  .card-premium:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-premium);
+  }
+
+  /* 3D floating animation */
+  .float-3d {
+    animation: float3d 6s ease-in-out infinite;
+  }
+  
+  @keyframes float3d {
+    0%, 100% { transform: translateY(0px) rotateX(0deg); }
+    50% { transform: translateY(-20px) rotateX(5deg); }
+  }
+
+  /* Glow effect */
+  .glow {
+    position: relative;
+  }
+  
+  .glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-hero);
+    border-radius: inherit;
+    filter: blur(20px);
+    opacity: 0.3;
+    z-index: -1;
+  }
+
+  /* Parallax sections */
+  .parallax-section {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  /* Premium text gradients */
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .text-gradient-secondary {
+    background: var(--secondary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
