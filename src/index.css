@@ -8,49 +8,49 @@
 
 @layer base {
   :root {
-    /* Premium color palette inspired by AI and technology */
-    --background: 222 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Trust & Intelligence Color Psychology Palette */
+    --background: 220 26% 14%;
+    --foreground: 213 31% 91%;
 
-    --card: 224 71% 6%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 26% 14%;
+    --card-foreground: 213 31% 91%;
 
-    --popover: 224 71% 6%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 213 31% 91%;
 
-    /* AI Blue gradient system */
-    --primary: 217 91% 59%;
+    /* Deep Blue Trust System */
+    --primary: 217 91% 60%;
     --primary-foreground: 222 84% 4.9%;
-    --primary-gradient: linear-gradient(135deg, hsl(217 91% 59%), hsl(195 100% 50%));
+    --primary-gradient: linear-gradient(135deg, hsl(217 91% 60%), hsl(199 89% 48%));
     
-    --secondary: 195 100% 50%;
-    --secondary-foreground: 222 84% 4.9%;
-    --secondary-gradient: linear-gradient(135deg, hsl(195 100% 50%), hsl(160 100% 45%));
+    --secondary: 222 84% 4.9%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-gradient: linear-gradient(135deg, hsl(188 94% 43%), hsl(142 76% 36%));
 
-    --accent: 160 100% 45%;
+    --accent: 188 94% 43%;
     --accent-foreground: 222 84% 4.9%;
     
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 215 25% 27%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --destructive: 0 62% 30%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217 32% 17%;
     --input: 217 32% 17%;
-    --ring: 217 91% 59%;
+    --ring: 217 91% 60%;
 
     --radius: 1rem;
 
-    /* Premium gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 59%) 0%, hsl(195 100% 50%) 50%, hsl(160 100% 45%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(224 71% 6%) 0%, hsl(217 32% 17%) 100%);
-    --gradient-surface: linear-gradient(180deg, hsl(222 84% 4.9%) 0%, hsl(224 71% 6%) 100%);
+    /* Trust-Building Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(199 89% 48%) 50%, hsl(188 94% 43%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 26% 14%) 0%, hsl(215 25% 27%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(220 26% 14%) 0%, hsl(217 91% 15%) 50%, hsl(222 84% 4.9%) 100%);
     
-    /* Premium shadows with glow effects */
-    --shadow-premium: 0 25px 50px -12px hsl(217 91% 59% / 0.25);
-    --shadow-glow: 0 0 50px hsl(217 91% 59% / 0.3);
-    --shadow-card: 0 10px 30px -5px hsl(222 84% 4.9% / 0.3);
+    /* Premium Blue Shadows */
+    --shadow-premium: 0 25px 50px -12px hsl(217 91% 60% / 0.3);
+    --shadow-glow: 0 0 50px hsl(217 91% 60% / 0.4);
+    --shadow-card: 0 10px 30px -5px hsl(220 26% 14% / 0.4);
     
     /* Animation variables */
     --transition-premium: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -120,6 +120,7 @@
   body {
     @apply bg-background text-foreground font-inter;
     background: var(--gradient-surface);
+    background-attachment: fixed;
   }
   
   h1, h2, h3, h4, h5, h6 {
