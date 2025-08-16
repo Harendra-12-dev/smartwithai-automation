@@ -63,7 +63,7 @@ const LogoIntro = ({ onComplete }: LogoIntroProps) => {
             
             {/* Logo image */}
             <img 
-              src="/lovable-uploads/40d3efed-5e94-44e9-90a8-769129dde5f0.png" 
+              src="/lovable-uploads/8d9afd62-5469-4c37-84f3-2af5ff794621.png" 
               alt="Smart With AI - Intelligent Brain Logo"
               className="relative w-32 h-32 md:w-40 md:h-40 object-contain mx-auto float-3d"
               style={{
